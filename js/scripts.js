@@ -7,6 +7,10 @@ function isAVowel(letter) {
   return letter.match(/[aeiou]/i);
 }
 
+function isYVowel(letter) {
+  return letter.match(/[aeiouy]/i);
+}
+
 function isQ(string) {
   return string.match(/(q)/i);
 }
@@ -24,6 +28,10 @@ function translate(input) {
           }else{
             sliceIndex = i + 1;
           }
+          break;
+        }
+        else if (isYVowel(input[i]) && i > 0) {
+          sliceIndex = i;
           break;
         }
         else if (isAVowel(input[i])) {
